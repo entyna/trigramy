@@ -22,22 +22,19 @@ function setup() {
     let collision = new c2.Collision();
     world.addInteractionForce(collision);
 
-    // let constForce = new c2.ConstForce(0, -0.1);
+    // let constForce = new c2.ConstForce(0, -1);
     // world.addForce(constForce);
 
-    let lineField3a = new c2.LineField(new c2.Line(0, height*0.25, width, height*0.25), -1);
-    world.addForce(lineField3a);
+    let lineField3 = new c2.LineField(new c2.Line(0, height*0.25, width, height*0.25), -2);
+    world.addForce(lineField3);
+   
+    let lineField2 = new c2.LineField(new c2.Line(0, height*0.5, width, height*0.5), -2);
+    world.addForce(lineField2);
 
-    let lineField2a = new c2.LineField(new c2.Line(width*0.2, height*0.5, width*0.4, height*0.5), 0.25);
-    world.addForce(lineField2a);
-
-    let lineField2b = new c2.LineField(new c2.Line(width*0.6, height*0.5, width*0.8, height*0.5), 0.25);
-    world.addForce(lineField2b);
-
-    let lineField1a = new c2.LineField(new c2.Line(width*0.2, height*0.75, width*0.4, height*0.75), 0.25);
+    let lineField1a = new c2.PointField(new c2.Point(width*0.25, height*0.75), 1);
     world.addForce(lineField1a);
 
-    let lineField1b = new c2.LineField(new c2.Line(width*0.6, height*0.75, width*0.8, height*0.75), 0.25);
+    let lineField1b = new c2.PointField(new c2.Point(width*0.75, height*0.75), 1);
     world.addForce(lineField1b);
 
 
