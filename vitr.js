@@ -9,24 +9,24 @@ function setup() {
     let collision = new c2.Collision();
     world.addInteractionForce(collision);
 
-    // let constForce = new c2.ConstForce(0.3, 0);
-    // world.addForce(constForce);
+    let constForce = new c2.ConstForce(0, -0.5);
+    world.addForce(constForce);
 
-    let yaoYin2A = new c2.LineField(new c2.Line(width*0.25, height*0.25, width*0.4, height*0.25), 0.6);
+    let yaoYang1 = new c2.LineField(new c2.Line(width*0.25, height*0.25, width*0.75, height*0.25), -0.3);
+    world.addForce(yaoYang1);
+    yaoYang1.range(0, 300);
+
+    let yaoYang = new c2.LineField(new c2.Line(width*0.25, height*0.5, width*0.75, height*0.5), -0.6);
+    world.addForce(yaoYang);
+    yaoYang.range(0, 300);
+
+    let yaoYin2A = new c2.LineField(new c2.Line(width*0.25, height*0.75, width*0.4, height*0.75), 0.4);
     world.addForce(yaoYin2A);
     yaoYin2A.range(0, 300);
 
-    let yaoYin2B = new c2.LineField(new c2.Line(width*0.6, height*0.25, width*0.75, height*0.25), 0.6);
+    let yaoYin2B = new c2.LineField(new c2.Line(width*0.6, height*0.75, width*0.75, height*0.75), 0.4);
     world.addForce(yaoYin2B);
     yaoYin2B.range(0, 300);
-
-    let yaoYang1 = new c2.LineField(new c2.Line(width*0.2, height*0.5, width*0.8, height*0.5), -1);
-    world.addForce(yaoYang1);
-    yaoYang1.range(0, 100);
-
-    let yaoYang = new c2.LineField(new c2.Line(width*0.2, height*0.75, width*0.8, height*0.75), -1);
-    world.addForce(yaoYang);
-    yaoYang.range(0, 300);
 
     noLoop();
     setInterval(function() {
