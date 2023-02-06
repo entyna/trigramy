@@ -45,7 +45,7 @@ function setup() {
 
 
 function draw() {
-   background(245, 20);
+   background(255, 20);
 
     for(let i=0; i<world.particles.length; i++){
         let p = world.particles[i];
