@@ -32,11 +32,11 @@ function setup() {
 
 
 function draw() {
-   background(255, 20);
+   background(0, 20);
 
     for(let i=0; i<world.particles.length; i++){
         let p = world.particles[i];
-        stroke('black');
+        stroke('white');
         fill(p.color);
         strokeWeight(2);
         point(p.position.x, p.position.y);
